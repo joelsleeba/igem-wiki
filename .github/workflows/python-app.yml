@@ -30,9 +30,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install flask frozen-flask
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: purge public
+      run: |
+        rm -rf ./public
     - name: flask freeze
       run: |
-        FLASK_APP=app.py 
+        FLASK_APP=freeze.py 
         FREEZER_BASE_URL=${{ steps.pages.outputs.base_url }} 
         flask freeze
     - name: Upload artifact
