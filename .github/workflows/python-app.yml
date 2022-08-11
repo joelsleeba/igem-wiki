@@ -28,6 +28,24 @@ jobs:
         python -m pip install --upgrade pip
         pip install flask frozen-flask
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: run app
+    - name: flask freeze
       run: |
-        python app.py
+        FLASK_APP=app.py 
+        FREEZER_BASE_URL=${{ steps.pages.outputs.base_url }} 
+        flask freeze
+    - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
+  
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
