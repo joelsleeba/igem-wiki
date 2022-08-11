@@ -35,9 +35,8 @@ jobs:
         rm -rf ./public
     - name: flask freeze
       run: |
-        FLASK_APP=freeze.py 
         FREEZER_BASE_URL=${{ steps.pages.outputs.base_url }} 
-        flask freeze
+        python freeze.py
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with: 
