@@ -18,7 +18,7 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
 
     <!---- TEAM NAME ---->
@@ -111,7 +111,7 @@
       </ul>
     </div>
   </div>
-</nav>
+   </nav>
 
   <!-- Header -->
   <header class="bg-hero py-5 mb-5">
@@ -126,11 +126,31 @@
   </header>
 
   <!-- Page Content -->
-  <div class="container">
-    
+<div class="container-fluid">
+    <div class="row">
 
-<div class="row mt-4">
-  <div class="col">
+    <div class="col-2">
+      <div class="container">
+        <div class="wrapper position-fixed">
+            <nav id="sidebar">
+               <div class="sidebar">
+                <h3>hello</h3>
+               
+                <ol>
+                <li>item1</li>
+                <li>item2</li>
+                </ol>
+                </div>
+             </nav>
+         </div>
+      </div>
+    </div>
+
+
+       <div class="col-10">
+
+  <div class="row mt-4">
+     <div class="col">
     <div class="bd-callout bd-callout-info">
       <h4>Silver Medal Criterion #3</h4>
       <p>Explain how you have determined your work is responsible and good for the world.</p>
@@ -152,10 +172,10 @@
       <hr>
       <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
     </div>
+     </div>
   </div>
-</div>
 
-<div class="row mt-4">
+        <div class="row mt-4">
   <div class="col-lg-8">
     <h2>Overview</h2>
     <hr>
@@ -177,13 +197,16 @@
       <li><a href="https://2020.igem.org/Team:Baltimore_BioCrew/Human_Practices">2020 Baltimore BioCrew</a></li>
     </ul>
   </div>
+        </div>
+
+       </div>
+
+    </div>
 </div>
 
 
-  </div>
-
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
-  <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+   <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
   <div class="container">
     <div class="row mb-4">
       <div class="col-lg-6 col-xs-12">
@@ -217,10 +240,10 @@
       </div>
     </div>
   </div>
-</footer>
+   </footer>
 
   <!-- Wiki Tools: Teams are allowed to remove it -->
-  <style>
+   <style>
     .wiki-tools-footer {
         --bs-gutter-x: 1.5rem;
         background: #222124;
@@ -242,15 +265,15 @@
     .wiki-tools-footer img {
         object-fit: contain;
     }
-</style>
+   </style>
 
-<section class="wiki-tools-footer container">
+   <section class="wiki-tools-footer container">
     <a id="wiki-tools-link">Access Wiki Tools</a>
     <a id="wiki-tools-repo">View Source Code</a>
     <img id="wiki-tools-pipeline">
-</section>
+   </section>
 
-<script>
+   <script>
     const wikiToolsLink = document.getElementById('wiki-tools-link')
     const wikiToolsRepo = document.getElementById('wiki-tools-repo')
     const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
@@ -264,7 +287,7 @@
     wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
     wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
     wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
-</script>
+   </script>
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="../static/bootstrap.bundle.min.js"></script>
